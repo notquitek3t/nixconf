@@ -169,7 +169,6 @@
     packages = with pkgs; [
       qbittorrent
       kdePackages.kate
-      gearlever
       jellyfin-desktop
       flatpak
       vscode.fhs
