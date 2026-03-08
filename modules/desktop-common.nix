@@ -136,7 +136,7 @@
   programs.kdeconnect.enable = true;
   programs.firefox = {
     enable = true;
-    package = librewolf;
+    package = pkgs.librewolf;
     policies = {
       DisableTelemetry = true;
       DisableFirefoxStudies = true;
