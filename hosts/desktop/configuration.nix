@@ -22,6 +22,7 @@
   networking.hostName = "TheBlackBox"; # Define your hostname.
   services.openssh.enable = true;
   virtualisation.vmware.host.enable = true;
+  programs.steam.enable = true;
 
   users.users.k3t = {
     packages = with pkgs; [
