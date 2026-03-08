@@ -167,26 +167,14 @@
 
   users.users.k3t = {
     packages = with pkgs; [
-      anydesk
-      dwarfs
-      bubblewrap
-      fuse-overlayfs
-      nicotine-plus
       qbittorrent
       kdePackages.kate
-      lutris
       gearlever
-      remmina
-      thunderbird
-      prismlauncher
       jellyfin-desktop
       flatpak
       vscode.fhs
       signal-desktop
       spotify
-      wineWowPackages.waylandFull
-      virt-viewer
-      winetricks
     ];
   };
 }

@@ -23,4 +23,17 @@
   services.openssh.enable = true;
   virtualisation.vmware.host.enable = true;
 
+  users.users.k3t = {
+    packages = with pkgs; [
+      anydesk
+      bubblewrap
+      fuse-overlayfs
+      nicotine-plus
+      lutris
+      prismlauncher
+      wineWowPackages.waylandFull
+      virt-viewer
+      winetricks
+    ];
+  };
 }
