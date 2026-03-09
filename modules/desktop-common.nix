@@ -19,6 +19,9 @@
   };
 
   # Support
+  services.gvfs.enable = true;
+  services.tumbler.enable = true;
+  programs.dconf.enable = true;
   services.flatpak.enable = true;
   boot.binfmt.preferStaticEmulators = true;
   boot.binfmt.emulatedSystems = [ "aarch64-linux" ];
@@ -70,9 +73,37 @@
       };
     };
     libinput.enable = true;
-    windowManager.i3.enable = true;
+    #windowManager.i3.enable = true;
+    windowManager.i3 = {
+      #package = pkgs.i3-gaps;
+      enable = true;
+      extraPackages = with pkgs; [
+        dmenu
+        i3status
+	i3lock
+	i3blocks
+      ];
+    };
   };
   services.displayManager.defaultSession = "xfce";
+
+  services.picom = {
+    enable = true;
+    fade = true;
+    #vSync = true;
+    shadow = true;
+    fadeDelta = 4 ;
+    inactiveOpacity = 0.8;
+    activeOpacity = 1;
+    #backend = "glx";
+    settings = {
+      blur = {
+        #method = "dual_kawase";
+        #background = true;
+        strength = 5;
+      };
+    };
+  };
 
   # desktop oriented bluetooth settings
   hardware.bluetooth = {
