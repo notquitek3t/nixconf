@@ -26,6 +26,7 @@
 
   users.users.k3t = {
     packages = with pkgs; [
+      kodi
       anydesk
       bubblewrap
       fuse-overlayfs
