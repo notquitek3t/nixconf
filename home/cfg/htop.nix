@@ -1,3 +1,5 @@
+{ config, ... }:
+
 {
   programs.htop.settings = {
     color_scheme = 0;
