@@ -33,6 +33,9 @@
   # networking
   networking.networkmanager.enable = true;
 
+  # environment
+  programs.zsh.enable = true;
+  users.defaultUserShell = pkgs.zsh;
   environment.pathsToLink = [ "/share/zsh" ];
   environment.systemPackages = with pkgs; [
     git
