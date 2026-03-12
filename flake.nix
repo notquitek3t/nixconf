@@ -35,6 +35,11 @@
         ./modules/desktop-common.nix
         ./hosts/laptop/configuration.nix
       ];
+      "nixcloud" = mkHost "x86_64-linux" [
+        ./modules/common.nix
+        ./modules/vps-aarch64-common.nix
+        ./hosts/nixcloud/configuration.nix
+      ];
       Pontiac-G5 = mkHost "aarch64-linux" [
         impermanence.nixosModules.impermanence
         nixos-hardware.nixosModules.raspberry-pi-4
