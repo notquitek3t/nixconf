@@ -9,4 +9,5 @@
 
   home.username = "k3t";
   home.homeDirectory = "/home/k3t";
+  home.stateVersion = "25.11";
 }
