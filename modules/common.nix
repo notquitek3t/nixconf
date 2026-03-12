@@ -33,6 +33,7 @@
   # networking
   networking.networkmanager.enable = true;
 
+  environment.pathsToLink = [ "/share/zsh" ];
   environment.systemPackages = with pkgs; [
     git
     neovim
