@@ -1,5 +1,6 @@
 { pkgs, ... }: {
   networking.hostName = "Pontiac-G5";
+  console.enable = false;
   systemd.services = {
     "autovt@tty1" = {
       enable = true;

@@ -26,18 +26,18 @@
   services.flatpak.enable = true;
   boot.binfmt.preferStaticEmulators = true;
   boot.binfmt.emulatedSystems = [ "aarch64-linux" ];
-  hardware.graphics.enable32Bit = true;
   programs.nix-ld.enable = true;
   programs.appimage.enable = true;
   programs.appimage.binfmt = true;
 
-  # Enable CUPS to print documents.
+  # Printing
   services.printing.enable = true;
 
-  # graphics
+  # Graphics
   hardware.enableRedistributableFirmware = true;
   hardware.graphics = {
     enable = true;
+    enable32Bit = true;
     extraPackages = with pkgs; [
       # Required for modern Intel GPUs (Xe iGPU and ARC)
       intel-media-driver     # VA-API (iHD) userspace

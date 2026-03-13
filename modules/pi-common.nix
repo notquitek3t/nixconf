@@ -16,11 +16,11 @@
     };
   enableRedistributableFirmware = true;
   };
+  networking.networkmanager.wifi.powersave = false;
 
   boot.loader.grub.enable = false;
   boot.loader.generic-extlinux-compatible.enable = true;
 
-  console.enable = false;
   environment.systemPackages = with pkgs; [
     libraspberrypi
     raspberrypi-eeprom
