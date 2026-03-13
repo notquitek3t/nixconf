@@ -19,7 +19,7 @@
   };
 
   # Support
-  fonts.packages = [ "JetBrains Mono" ] ++ builtins.filter lib.attrsets.isDerivation (builtins.attrValues pkgs.nerd-fonts);
+  fonts.packages = with pkgs; [ nerdfonts noto-fonts noto-fonts-cjk-sans liberation_ttf fira-code fira-code-symbols ];
   services.gvfs.enable = true;
   services.tumbler.enable = true;
   programs.dconf.enable = true;
@@ -94,7 +94,7 @@
     #vSync = true;
     shadow = true;
     fadeDelta = 4 ;
-    inactiveOpacity = 0.8;
+    inactiveOpacity = 1;
     activeOpacity = 1;
     #backend = "glx";
     settings = {
