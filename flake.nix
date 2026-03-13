@@ -17,11 +17,12 @@
 
     mkPiImage = modules: (nixpkgs.lib.nixosSystem {
       system = "aarch64-linux";
-      specialArgs = { inherit impermanence nixos-hardware; };
+      specialArgs = { inherit impermanence nixos-hardware home-manager; };
       modules = [
         "${nixpkgs}/nixos/modules/installer/sd-card/sd-image-aarch64.nix"
         impermanence.nixosModules.impermanence
         nixos-hardware.nixosModules.raspberry-pi-4
+        home-manager.nixosModules.home-manager
       ] ++ modules;
     }).config.system.build.sdImage;
   in {
@@ -92,11 +93,21 @@
         ./modules/common.nix
         ./modules/pi-common.nix
         ./hosts/pi-car/configuration.nix
+        {
+          home-manager.useGlobalPkgs = true;
+          home-manager.useUserPackages = true;
+          home-manager.users.k3t = ./home/car.nix;
+        }
       ];
       pi-htpc = mkPiImage [
         ./modules/common.nix
         ./modules/pi-common.nix
         ./hosts/pi-htpc/configuration.nix
+        {
+          home-manager.useGlobalPkgs = true;
+          home-manager.useUserPackages = true;
+          home-manager.users.k3t = ./home/desktop.nix;
+        }
       ];
     };
   };

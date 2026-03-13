@@ -199,6 +199,7 @@
 
   users.users.k3t = {
     packages = with pkgs; [
+      joplin-desktop
       qbittorrent
       kdePackages.kate
       jellyfin-desktop
