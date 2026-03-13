@@ -19,7 +19,7 @@
   };
 
   # Support
-  fonts.packages = with pkgs; [ nerd-fonts noto-fonts noto-fonts-cjk-sans liberation_ttf fira-code fira-code-symbols ];
+  fonts.packages = with pkgs; [ nerd-fonts.fira-code noto-fonts noto-fonts-cjk-sans liberation_ttf fira-code fira-code-symbols ];
   services.gvfs.enable = true;
   services.tumbler.enable = true;
   programs.dconf.enable = true;
