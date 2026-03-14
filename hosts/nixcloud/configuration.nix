@@ -42,8 +42,8 @@
 
 
   # Open ports in the firewall.
-  networking.firewall.allowedTCPPorts = [ 80 443 25565 4433 9971 ];
-  networking.firewall.allowedUDPPorts = [ 24454 4433 9971 ];
+  networking.firewall.allowedTCPPorts = [ 80 443 25565 4433 9971 853 ];
+  networking.firewall.allowedUDPPorts = [ 443 24454 4433 9971 ];
 
   # Copy the NixOS configuration file and link it from the resulting system
   # (/run/current-system/configuration.nix). This is useful in case you

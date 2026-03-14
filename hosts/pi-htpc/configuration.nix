@@ -41,7 +41,7 @@ in
 {
   networking.hostName = "htpc";
 
-  # HDMI CEC
+  # hdmi cec
   nixpkgs.overlays = [
     (self: super: { libcec = super.libcec.override { withLibraspberrypi = true; }; })
   ];
@@ -75,9 +75,12 @@ in
     };
   };
 
-  # Kodi - run under Wayland
+  # kde connect for remote ctrl
+  programs.kdeconnect.enable = true;
+
+  # kodi
   services.cage.user = "k3t";
-  services.cage.extraArguments = [ "-m" "last" ];
+  services.cage.extraArguments = [ "-m" "last" "-d" ];
   services.cage.program = "${kodi-with-addons}/bin/kodi-standalone";
   services.cage.enable = true;  
 

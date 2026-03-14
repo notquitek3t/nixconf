@@ -57,7 +57,7 @@
         {
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
-          home-manager.users.k3t = ./home/vps.nix;
+          home-manager.users.k3t = ./home/server.nix;
         }
       ];
       Pontiac-G5 = mkHost "aarch64-linux" [
