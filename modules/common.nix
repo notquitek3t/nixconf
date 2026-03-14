@@ -49,6 +49,10 @@
     wget2
     python314
   ];
+
+  # disable core dumps
+  systemd.coredump.enable = false;
+
   # zram swap
   zramSwap.enable = true;
   zramSwap.memoryPercent = 80;
