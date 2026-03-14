@@ -38,6 +38,18 @@
           home-manager.users.k3t = ./home/desktop.nix;
         }
       ];
+      "htpc" = mkHost "aarch64-linux" [
+        nixos-hardware.nixosModules.raspberry-pi-4
+        ./modules/common.nix
+        ./modules/pi-common.nix
+        ./hosts/pi-htpc/configuration.nix
+        home-manager.nixosModules.home-manager
+        {
+          home-manager.useGlobalPkgs = true;
+          home-manager.useUserPackages = true;
+          home-manager.users.k3t = ./home/desktop.nix;
+        }
+      ];
       "T14" = mkHost "x86_64-linux" [
         ./modules/common.nix
         ./modules/desktop-common.nix
@@ -71,18 +83,6 @@
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
           home-manager.users.k3t = ./home/car.nix;
-        }
-      ];
-      pi-htpc = mkHost "aarch64-linux" [
-        nixos-hardware.nixosModules.raspberry-pi-4
-        ./modules/common.nix
-        ./modules/pi-common.nix
-        ./hosts/pi-htpc/configuration.nix
-        home-manager.nixosModules.home-manager
-        {
-          home-manager.useGlobalPkgs = true;
-          home-manager.useUserPackages = true;
-          home-manager.users.k3t = ./home/desktop.nix;
         }
       ];
     };

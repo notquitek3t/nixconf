@@ -78,11 +78,19 @@ in
   # kde connect for remote ctrl
   programs.kdeconnect.enable = true;
 
-  # kodi
-  services.cage.user = "k3t";
-  services.cage.extraArguments = [ "-m" "last" "-d" ];
-  services.cage.program = "${kodi-with-addons}/bin/kodi-standalone";
-  services.cage.enable = true;  
+  # kodi wayland
+  #services.cage.user = "k3t";
+  #services.cage.extraArguments = [ "-d" "-s" ];
+  #services.cage.program = "${kodi-with-addons}/bin/kodi-standalone";
+  #services.cage.enable = true;
+
+  # kodi x11
+  services.xserver.enable = true;
+  services.xserver.desktopManager.kodi.enable = true;
+  services.xserver.desktopManager.kodi.package = kodi-with-addons;
+  services.xserver.displayManager.lightdm.greeter.enable = false;
+  services.displayManager.autoLogin.user = "k3t";
+
 
   # audio
   security.rtkit.enable = true;

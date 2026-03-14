@@ -22,7 +22,7 @@
   # auto upgrade from your public repo
   system.autoUpgrade = {
     enable = true;
-    flake = "github:notquitek3t/nixconf";  # replace with your github username
+    flake = "github:notquitek3t/nixconf";
   };
 
   hardware.bluetooth = {
@@ -49,6 +49,9 @@
     wget2
     python314
   ];
+  # zram swap
+  zramSwap.enable = true;
+  zramSwap.memoryPercent = 80;
 
   users.users.k3t = {
     description = "Kai Moore";
