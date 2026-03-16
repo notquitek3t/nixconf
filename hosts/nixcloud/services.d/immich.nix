@@ -9,6 +9,7 @@
       enable = true;
       createDB = true;
     };
+    machine-learning.enable = false;
   };
 
   services.nginx.virtualHosts."immich.k3t.dev" = {
@@ -25,6 +26,5 @@
         send_timeout         600s;
       '';
     };
-    machine-learning.enable = false;
   };
 }
