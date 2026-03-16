@@ -25,5 +25,6 @@
         send_timeout         600s;
       '';
     };
+    machine-learning.enable = false;
   };
 }
