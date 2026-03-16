@@ -7,6 +7,7 @@
       # in order to avoid having  ADMIN_TOKEN in the nix store it can be also set with the help of an environment file
       # be aware that this file must be created by hand (or via secrets management like sops)
       environmentFile = "/var/lib/vaultwarden/vaultwarden.env";
+      configureNginx = true;
       config = {
         # Refer to https://github.com/dani-garcia/vaultwarden/blob/main/.env.template
         DOMAIN = "https://bitwarden.k3t.dev";
@@ -17,11 +18,11 @@
         ROCKET_LOG = "critical";
       };
   };
-  services.caddy.virtualHosts."bitwarden.k3t.dev".extraConfig = ''
-    encode zstd gzip
-
-    reverse_proxy :${toString config.services.vaultwarden.config.ROCKET_PORT} {
-        header_up X-Real-IP {remote_host}
-    }
-  '';
+  services.nginx.virtualHosts."bitwarden.k3t.dev".enableACME = true;
+  #services.caddy.virtualHosts."bitwarden.k3t.dev".extraConfig = ''
+  #  encode zstd gzip
+  #  reverse_proxy :${toString config.services.vaultwarden.config.ROCKET_PORT} {
+  #      header_up X-Real-IP {remote_host}
+  #  }
+  #'';
 }
