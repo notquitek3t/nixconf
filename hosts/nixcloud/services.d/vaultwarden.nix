@@ -8,6 +8,7 @@
       # be aware that this file must be created by hand (or via secrets management like sops)
       environmentFile = "/var/lib/vaultwarden/vaultwarden.env";
       configureNginx = true;
+      domain = "bitwarden.k3t.dev";
       config = {
         # Refer to https://github.com/dani-garcia/vaultwarden/blob/main/.env.template
         DOMAIN = "https://bitwarden.k3t.dev";
