@@ -8,6 +8,8 @@
       music-path = [
         "/home/k3t/Music"
       ];
+      playlist-path = "/home/k3t/Playlists";
+      podcast-path  = "/home/k3t/Podcasts";
     };
   };
 
