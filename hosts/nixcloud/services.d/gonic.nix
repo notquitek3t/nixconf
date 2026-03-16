@@ -6,10 +6,10 @@
     enable = true;
     settings = {
       music-path = [
-        "/home/k3t/Music"
+        "/mnt/Music"
       ];
-      playlists-path = "/home/k3t/Playlists";
-      podcast-path  = "/home/k3t/Podcasts";
+      playlists-path = "/mnt/Playlists";
+      podcast-path  = "/mnt/Podcasts";
     };
   };
 
