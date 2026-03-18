@@ -1,11 +1,7 @@
 {
   imports = [
     ./common.nix
+    ./cfg/keepassxc.nix
+    ./cfg/kitty.nix
   ];
-  programs = {
-    kitty = {
-        enable = true;
-        enableGitIntegration = true;
-    };
-  };
 }
