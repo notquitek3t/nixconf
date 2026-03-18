@@ -210,6 +210,7 @@
       signal-desktop
       spotify
       pulseaudio
+      kdePackages.kwallet
       (pkgs.kodi-wayland.withPackages (kodiPkgs: with kodiPkgs; [
         inputstream-adaptive
         inputstream-ffmpegdirect
