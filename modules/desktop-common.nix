@@ -197,6 +197,15 @@
   };
   environment.etc."firefox/policies/policies.json".target = "librewolf/policies/policies.json";
 
+  networking.firewall = {
+    allowedTCPPortRanges = [
+      { from = 8000; to = 9000; }
+    ];
+    allowedUDPPortRanges = [
+      { from = 8000; to = 9000; }
+    ];
+  };
+
   security.pam.services.k3t.kwallet.enable = true;
   security.pam.services.k3t.kwallet.forceRun = true;
   users.users.k3t = {
