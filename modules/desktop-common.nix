@@ -50,10 +50,10 @@
     ];
   };
 
-  environment.sessionVariables = {
-    LIBVA_DRIVER_NAME = "iHD";     # Prefer the modern iHD backend
-    # VDPAU_DRIVER = "va_gl";      # Only if using libvdpau-va-gl
-  };
+  #environment.sessionVariables = {
+  #  LIBVA_DRIVER_NAME = "iHD";     # Prefer the modern iHD backend
+  #  # VDPAU_DRIVER = "va_gl";      # Only if using libvdpau-va-gl
+  #};
 
 
 
