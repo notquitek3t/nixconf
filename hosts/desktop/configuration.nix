@@ -32,8 +32,6 @@
       nicotine-plus
       lutris
       prismlauncher
-      wineWowPackages.waylandFull
-      virt-viewer
       winetricks
     ];
   };

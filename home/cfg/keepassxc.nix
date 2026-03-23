@@ -8,6 +8,7 @@
       SSHAgent.Enabled = true;
       SSHAgent.UseOpenSSH = true;
       Browser.Enabled = true;
+      GUI.ApplicationTheme = "dark";
     };
   };
   xdg.autostart.enable = true;
