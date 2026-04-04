@@ -6,13 +6,14 @@
     impermanence.url = "github:nix-community/impermanence";
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
     home-manager.url = "github:nix-community/home-manager";
+    spicetify-nix.url = "github:Gerg-L/spicetify-nix";
   };
 
-  outputs = { self, nixpkgs, impermanence, nixos-hardware, home-manager, ... }:
+  outputs = { self, nixpkgs, impermanence, nixos-hardware, home-manager, spicetify-nix, ... }:
   let
     mkHost = system: modules: nixpkgs.lib.nixosSystem {
       inherit system modules;
-      specialArgs = { inherit impermanence nixos-hardware; };
+      specialArgs = { inherit impermanence nixos-hardware spicetify-nix; };
     };
 
     mkPiImage = modules: (nixpkgs.lib.nixosSystem {
@@ -31,6 +32,7 @@
         ./modules/common.nix
         ./modules/desktop-common.nix
         ./hosts/desktop/configuration.nix
+        spicetify-nix.nixosModules.spicetify
         home-manager.nixosModules.home-manager
         {
           home-manager.useGlobalPkgs = true;
@@ -47,13 +49,14 @@
         {
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
-          home-manager.users.k3t = ./home/desktop.nix;
+          home-manager.users.k3t = ./home/htpc.nix;
         }
       ];
       "T14" = mkHost "x86_64-linux" [
         ./modules/common.nix
         ./modules/desktop-common.nix
         ./hosts/laptop/configuration.nix
+        spicetify-nix.nixosModules.spicetify
         home-manager.nixosModules.home-manager
         {
           home-manager.useGlobalPkgs = true;

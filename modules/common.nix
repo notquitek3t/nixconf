@@ -57,6 +57,9 @@
   zramSwap.enable = true;
   zramSwap.memoryPercent = 80;
 
+  # security
+  security.polkit.enable = true;
+
   users.users.k3t = {
     description = "Kai Moore";
     isNormalUser = true;

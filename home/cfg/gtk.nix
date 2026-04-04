@@ -1,4 +1,4 @@
-{ pkgs, ... }: {
+{ config, pkgs, ... }: {
   gtk = {
     enable = true;
     colorScheme = "dark";
@@ -17,6 +17,7 @@
     gtk4 = {
       enable = true;
       colorScheme = "dark";
+      theme = config.gtk.theme;
     };
   };
 }

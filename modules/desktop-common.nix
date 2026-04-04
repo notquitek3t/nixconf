@@ -1,4 +1,10 @@
-{ pkgs, lib, ... }: {
+{ pkgs, lib, spicetify-nix,... }:
+
+let
+  spicePkgs = spicetify-nix.legacyPackages.${pkgs.stdenv.system};
+in
+
+{
 
   # Bootloader
   boot.loader.systemd-boot.enable = true;
@@ -207,10 +213,33 @@
     ];
   };
 
+  programs.spicetify = {
+    enable = true;
+
+    enabledExtensions = with spicePkgs.extensions; [
+      adblock
+      hidePodcasts
+      shuffle # shuffle+ (special characters are sanitized out of extension names)
+    ];
+    enabledCustomApps = with spicePkgs.apps; [
+      newReleases
+      ncsVisualizer
+    ];
+    enabledSnippets = with spicePkgs.snippets; [
+      rotatingCoverart
+      pointer
+    ];
+
+    theme = spicePkgs.themes.catppuccin;
+    colorScheme = "mocha";
+  };
+
   security.pam.services.k3t.kwallet.enable = true;
   security.pam.services.k3t.kwallet.forceRun = true;
   users.users.k3t = {
     packages = with pkgs; [
+      fcast-client
+      fcast-receiver
       joplin-desktop
       qbittorrent
       kdePackages.kate
@@ -218,7 +247,6 @@
       flatpak
       vscode.fhs
       signal-desktop
-      spotify
       easyeffects
       pulseaudio
       kdePackages.kwallet

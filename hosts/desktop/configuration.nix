@@ -32,6 +32,7 @@
       nicotine-plus
       lutris
       prismlauncher
+      rpcs3
       winetricks
     ];
   };
