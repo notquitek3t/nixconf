@@ -23,6 +23,10 @@
   services.openssh.enable = true;
   virtualisation.vmware.host.enable = true;
   programs.steam.enable = true;
+  services.displayManager = {
+    autoLogin.enable = true;
+    autoLogin.user = "k3t";
+  };
 
   users.users.k3t = {
     packages = with pkgs; [
