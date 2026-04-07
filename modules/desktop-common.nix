@@ -24,6 +24,11 @@ in
     fileSystems = [ "/" ];
   };
 
+  # Power
+  services.system76-scheduler.enable = true;
+  services.thermald.enable = true;
+  services.power-profiles-daemon.enable = true;
+
   # Support
   fonts.packages = with pkgs; [ nerd-fonts.fira-code noto-fonts noto-fonts-cjk-sans liberation_ttf fira-code fira-code-symbols ];
   services.gvfs.enable = true;
