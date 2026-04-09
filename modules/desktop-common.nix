@@ -251,7 +251,7 @@ in
       kdePackages.kate
       jellyfin-desktop
       flatpak
-      grayjay.all
+      grayjay
       vscode.fhs
       signal-desktop
       easyeffects
