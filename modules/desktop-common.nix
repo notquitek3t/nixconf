@@ -26,7 +26,7 @@ in
 
   # Performance
   services.system76-scheduler.enable = true;
-  services.system76-power.enable = true;
+  hardware.system76.power-daemon.enable = true;
   services.thermald.enable = true;
   services.power-profiles-daemon.enable = true;
 
